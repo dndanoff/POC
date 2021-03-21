@@ -21,7 +21,7 @@ services:
             - ./volume_data/dashboard-db:/var/lib/postgresql/data
         restart: always
         ports:
-            - "5431:5431"
+            - "5431:5432"
         environment:
             - POSTGRES_USER=dashboard_user
             - POSTGRES_PASSWORD=secret
