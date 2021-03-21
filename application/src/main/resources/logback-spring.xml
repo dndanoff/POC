@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook" />
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<logger name="org.springframework" level="INFO" />
+	<logger name="cars.ship" level="DEBUG" />
+
+	<!-- File appender Configuration -->
+	<appender name="FILE_SIZE_AND_TIME_BASED"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/shipperlite-posting-backend.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/shipperlite-posting-backend.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>-%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%15.15t] %-40.40logger{39} : MDC[CORRELATION_ID=%mdc{CORRELATION_ID}] %m%n%ex{full}</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<springProfile name="local">
+			<appender-ref ref="FILE_SIZE_AND_TIME_BASED" />
+		</springProfile>
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>
