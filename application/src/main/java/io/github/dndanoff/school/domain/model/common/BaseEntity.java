@@ -1,5 +1,6 @@
 package io.github.dndanoff.school.domain.model.common;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -22,11 +23,10 @@ import lombok.Setter;
 @MappedSuperclass
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EntityListeners({AuditingEntityListener.class, BaseEntityListener.class})
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable{
     @Id
-	@Setter(AccessLevel.PRIVATE)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	protected Long id;
     

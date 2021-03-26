@@ -5,7 +5,7 @@ import java.util.List;
 
 import io.github.dndanoff.school.domain.model.Student;
 import io.github.dndanoff.school.domain.ports.in.StudentOperations;
-import io.github.dndanoff.school.domain.ports.out.StudentRepository;
+import io.github.dndanoff.school.domain.ports.out.repo.StudentRepository;
 
 public class StudentService implements StudentOperations {
 

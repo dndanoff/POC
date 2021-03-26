@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.application.adapters.in.schdulers;
+package io.github.dndanoff.school.application.adapters.in.schedulers;
 
 import java.util.UUID;
 

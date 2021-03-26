@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 
 import io.github.dndanoff.school.domain.model.OutboxMessage;
 import io.github.dndanoff.school.domain.ports.in.UnprocessedMessageHandler;
-import io.github.dndanoff.school.domain.ports.out.OutboxMessageRepository;
 import io.github.dndanoff.school.domain.ports.out.OutboxMessageSender;
+import io.github.dndanoff.school.domain.ports.out.repo.OutboxMessageRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

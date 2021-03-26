@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.domain.model.vo;
+package io.github.dndanoff.school.domain.model.vo.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

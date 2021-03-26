@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.application.adapters.out;
+package io.github.dndanoff.school.application.adapters.out.repo;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,11 +8,12 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import io.github.dndanoff.school.domain.model.OutboxMessage;
 import io.github.dndanoff.school.domain.model.Student;
-import io.github.dndanoff.school.domain.ports.out.OutboxMessageRepository;
+import io.github.dndanoff.school.domain.ports.out.repo.OutboxMessageRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -56,7 +57,7 @@ public class OutboxMessageRepositoryImpl extends SpecificationAwareRepository<St
 	}
 	
 	@Repository
-	interface OutboxMessageBasicRepository extends JpaRepository<OutboxMessage, Long>{
+	interface OutboxMessageBasicRepository extends JpaRepository<OutboxMessage, Long>, JpaSpecificationExecutor<OutboxMessage>{
 		public List<OutboxMessage> findAllByProcessedOrderByCreatedAtAsc(Boolean processed);
 	}
 }

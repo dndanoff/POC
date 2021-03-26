@@ -3,10 +3,10 @@ package io.github.dndanoff.school.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import io.github.dndanoff.school.domain.ports.out.OutboxMessageRepository;
 import io.github.dndanoff.school.domain.ports.out.OutboxMessageSender;
-import io.github.dndanoff.school.domain.ports.out.StudentRepository;
-import io.github.dndanoff.school.domain.ports.out.TeacherRepository;
+import io.github.dndanoff.school.domain.ports.out.repo.OutboxMessageRepository;
+import io.github.dndanoff.school.domain.ports.out.repo.StudentRepository;
+import io.github.dndanoff.school.domain.ports.out.repo.TeacherRepository;
 import io.github.dndanoff.school.domain.service.OutboxMessageService;
 import io.github.dndanoff.school.domain.service.StudentService;
 import io.github.dndanoff.school.domain.service.TeacherService;

@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.application.adapters.out;
+package io.github.dndanoff.school.application.adapters.out.repo;
 
 import java.util.Optional;
 
@@ -8,40 +8,39 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import io.github.dndanoff.school.domain.model.Student;
-import io.github.dndanoff.school.domain.model.Teacher;
-import io.github.dndanoff.school.domain.ports.out.TeacherRepository;
+import io.github.dndanoff.school.domain.ports.out.repo.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Transactional
 @Repository
-public class TeacherRepositoryImpl extends SpecificationAwareRepository<Student> implements TeacherRepository {
-	
+public class StudentRepositoryImpl extends SpecificationAwareRepository<Student> implements StudentRepository {
 	@PersistenceContext
     private final EntityManager em;
-	private final TeacherBasicRepository jpaRepo;
+	private final StudentBasicRepository jpaRepo;
 	
 	@Autowired
-	public TeacherRepositoryImpl(EntityManager em, TeacherBasicRepository jpaRepo) {
+	public StudentRepositoryImpl(EntityManager em, StudentBasicRepository jpaRepo) {
 		this.em = em;
 		this.jpaRepo = jpaRepo;
 	}
 
 	@Override
-	public Teacher save(Teacher entity) {
+	public Student save(Student entity) {
 		return jpaRepo.save(entity);
 	}
 
 	@Override
-	public Optional<Teacher> findById(Long id) {
+	public Optional<Student> findById(Long id) {
 		return jpaRepo.findById(id);
 	}
 
 	@Override
-	public Iterable<Teacher> findAll() {
+	public Iterable<Student> findAll() {
 		return jpaRepo.findAll();
 	}
 
@@ -56,7 +55,7 @@ public class TeacherRepositoryImpl extends SpecificationAwareRepository<Student>
 	}
 	
 	@Repository
-	interface TeacherBasicRepository extends JpaRepository<Teacher, Long>{
+	interface StudentBasicRepository extends JpaRepository<Student, Long>, JpaSpecificationExecutor<Student>{
 		
 	}
 }

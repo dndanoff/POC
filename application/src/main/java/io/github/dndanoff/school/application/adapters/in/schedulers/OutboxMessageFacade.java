@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.application.adapters.in.schdulers;
+package io.github.dndanoff.school.application.adapters.in.schedulers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

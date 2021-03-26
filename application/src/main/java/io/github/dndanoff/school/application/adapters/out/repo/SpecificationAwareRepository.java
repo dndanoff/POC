@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.application.adapters.out;
+package io.github.dndanoff.school.application.adapters.out.repo;
 
 import java.util.List;
 
@@ -8,11 +8,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
 
-import io.github.dndanoff.school.domain.model.vo.Filter;
-import io.github.dndanoff.school.domain.model.vo.FilterOperator;
-import io.github.dndanoff.school.domain.model.vo.PagingCriteria;
-import io.github.dndanoff.school.domain.model.vo.SearchCriteria;
-import io.github.dndanoff.school.domain.model.vo.SortCriteria;
+import io.github.dndanoff.school.domain.model.vo.common.Filter;
+import io.github.dndanoff.school.domain.model.vo.common.FilterOperator;
+import io.github.dndanoff.school.domain.model.vo.common.PagingCriteria;
+import io.github.dndanoff.school.domain.model.vo.common.SearchCriteria;
+import io.github.dndanoff.school.domain.model.vo.common.SortCriteria;
 
 public class SpecificationAwareRepository<E> {
 	

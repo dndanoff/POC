@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.domain.ports.out;
+package io.github.dndanoff.school.domain.ports.out.repo;
 
 import java.util.List;
 import java.util.Optional;

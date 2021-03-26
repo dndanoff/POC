@@ -13,12 +13,15 @@ public abstract class ArchitectureTest {
 	
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureTest.class);
 	
-	static final String CONFIG_PACKAGES = "io.github.dndanoff.config..";
-    static final String MODEL_LAYER_PACKAGES = "io.github.dndanoff.model..";
-    static final String REPOSITORY_LAYER_PACKAGES = "io.github.dndanoff.repository..";
-    static final String REST_LAYER_PACKAGES = "io.github.dndanoff.entry_point.web.rest..";
-    static final String FACADE_LAYER_PACKAGES = "io.github.dndanoff.facade..";
-    static final String SERVICE_LAYER_PACKAGES = "io.github.dndanoff.service..";
+	private static final String ROOT_PACKAGE = "cars.ship.shipperlite.posting";
+	
+	static final String ALL_PACKAGES = ROOT_PACKAGE+"..";
+	
+	static final String DOMAIN_LAYER_PACKAGES = ROOT_PACKAGE+".domain..";
+	
+	static final String APPLICATION_LAYER_PACKAGES = ROOT_PACKAGE+".application..";
+	 
+	static final String CONFIG_PACKAGES = ROOT_PACKAGE+".config..";
 
     static JavaClasses classes;
 

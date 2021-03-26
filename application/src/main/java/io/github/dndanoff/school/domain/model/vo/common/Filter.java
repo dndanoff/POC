@@ -1,4 +1,4 @@
-package io.github.dndanoff.school.domain.model.vo;
+package io.github.dndanoff.school.domain.model.vo.common;
 
 import io.github.dndanoff.school.domain.model.vo.error.IllegalOperationException;
 import lombok.AllArgsConstructor;
