@@ -39,12 +39,7 @@ public abstract class ArchitectureTest {
                 .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_ARCHIVES)
                 .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
                 .withImportOption(IGNORE_GENERATED_FILES)
-                .importPackages(CONFIG_PACKAGES,
-		                		MODEL_LAYER_PACKAGES,
-		                		REPOSITORY_LAYER_PACKAGES,
-		                		REST_LAYER_PACKAGES,
-		                		FACADE_LAYER_PACKAGES,
-		                		SERVICE_LAYER_PACKAGES);
+                .importPackages(ALL_PACKAGES);
         
         log.info("Finished loading classes");
     }
